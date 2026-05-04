@@ -4,8 +4,7 @@ const transporter = nodemailer.createTransport({
   host: process.env.MAILHOG_HOST || "localhost",
   port: parseInt(process.env.MAILHOG_PORT || "1027"),
   secure: false,
-  auth: false,
-});
+} as Parameters<typeof nodemailer.createTransport>[0]);
 
 export async function sendMagicLink(email: string, token: string) {
   const baseUrl = process.env.BASE_URL || "http://localhost:3000";
