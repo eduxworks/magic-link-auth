@@ -30,11 +30,11 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
         throw new Error(data.error || "Failed to send magic link");
       }
 
-      setMessage("Magic link sent! Check your email.");
+      setMessage("¡Enlace mágico enviado! Revisa tu correo.");
       setEmail("");
       onSuccess?.();
     } catch (err) {
-      setError(err instanceof Error ? err.message : "An error occurred");
+      setError(err instanceof Error ? err.message : "Ocurrió un error");
     } finally {
       setLoading(false);
     }
@@ -47,14 +47,14 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
           htmlFor="email"
           className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
         >
-          Email Address
+          Dirección de Correo
         </label>
         <input
           id="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="you@example.com"
+          placeholder="tu@ejemplo.com"
           required
           disabled={loading}
           className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
@@ -66,7 +66,7 @@ export default function LoginForm({ onSuccess }: LoginFormProps) {
         disabled={loading || !email}
         className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-medium py-2 px-4 rounded-lg transition-colors"
       >
-        {loading ? "Sending..." : "Send Magic Link"}
+        {loading ? "Enviando..." : "Enviar Enlace Mágico"}
       </button>
 
       {error && (

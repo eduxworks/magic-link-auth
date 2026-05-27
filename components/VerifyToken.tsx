@@ -16,7 +16,7 @@ export default function VerifyToken() {
 
       if (!token || !email) {
         setStatus("error");
-        setMessage("Missing token or email");
+        setMessage("Falta el token o el correo");
         return;
       }
 
@@ -35,7 +35,7 @@ export default function VerifyToken() {
 
         if (!verifyResponse.ok) {
           const data = await verifyResponse.json();
-          throw new Error(data.error || "Token verification failed");
+          throw new Error(data.error || "La verificación del token falló");
         }
 
         const data = await verifyResponse.json();
@@ -43,7 +43,7 @@ export default function VerifyToken() {
         localStorage.setItem("authToken", data.token);
 
         setStatus("success");
-        setMessage("Login successful! Redirecting...");
+        setMessage("¡Inicio de sesión exitoso! Redirigiendo...");
 
         setTimeout(() => {
           router.push("/");
@@ -51,7 +51,7 @@ export default function VerifyToken() {
       } catch (error) {
         setStatus("error");
         setMessage(
-          error instanceof Error ? error.message : "Verification failed"
+          error instanceof Error ? error.message : "Verificación fallida"
         );
       }
     };
@@ -65,7 +65,7 @@ export default function VerifyToken() {
         {status === "loading" && (
           <div className="text-center">
             <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mb-4"></div>
-            <p className="text-gray-600 dark:text-gray-400">Verifying your link...</p>
+            <p className="text-gray-600 dark:text-gray-400">Verificando tu enlace...</p>
           </div>
         )}
 
@@ -84,7 +84,7 @@ export default function VerifyToken() {
               href="/login"
               className="inline-block text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
             >
-              Back to Login
+              Volver a Iniciar Sesión
             </a>
           </div>
         )}

@@ -13,19 +13,19 @@ export async function sendMagicLink(email: string, token: string) {
   const mailOptions = {
     from: process.env.MAILHOG_FROM || "noreply@magiclink.local",
     to: email,
-    subject: "Your Magic Link - Sign In",
+    subject: "Tu Enlace Mágico - Inicia Sesión",
     html: `
-      <h2>Sign In to Magic Link</h2>
-      <p>Click the link below to sign in to your account:</p>
+      <h2>Inicia Sesión en Magic Link</h2>
+      <p>Haz clic en el enlace a continuación para iniciar sesión en tu cuenta:</p>
       <p>
         <a href="${magicLink}" style="background-color: #007bff; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none;">
-          Sign In
+          Iniciar Sesión
         </a>
       </p>
-      <p>Or copy and paste this link in your browser:</p>
+      <p>O copia y pega este enlace en tu navegador:</p>
       <p>${magicLink}</p>
-      <p>This link will expire in 15 minutes.</p>
-      <p>If you didn't request this link, you can safely ignore this email.</p>
+      <p>Este enlace expirará en 15 minutos.</p>
+      <p>Si no solicitaste este enlace, puedes ignorar este correo de forma segura.</p>
     `,
   };
 

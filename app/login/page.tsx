@@ -7,10 +7,10 @@ export default function LoginPage() {
       <div className="max-w-md w-full bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            Sign In
+            Iniciar Sesión
           </h1>
           <p className="text-gray-600 dark:text-gray-400">
-            Enter your email to receive a magic link
+            Ingresa tu correo para recibir un enlace mágico
           </p>
         </div>
 
@@ -18,12 +18,12 @@ export default function LoginPage() {
 
         <div className="mt-6 text-center">
           <p className="text-gray-600 dark:text-gray-400 text-sm">
-            Already have a magic link?{" "}
+            ¿Ya tienes un enlace mágico?{" "}
             <a
               href="/auth/verify"
               className="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
             >
-              Click here to verify
+              Haz clic aquí para verificar
             </a>
           </p>
         </div>
@@ -33,7 +33,7 @@ export default function LoginPage() {
             href="/"
             className="text-gray-600 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300 text-sm"
           >
-            Back to home
+            Volver al inicio
           </Link>
         </div>
       </div>
